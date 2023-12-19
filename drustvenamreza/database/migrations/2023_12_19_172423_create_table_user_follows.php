@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('statusPracenja');
             $table->date('datum');
-            $table->foreignId('follower_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('followed_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('follower_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('followed_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
