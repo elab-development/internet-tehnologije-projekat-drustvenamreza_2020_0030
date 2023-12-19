@@ -15,6 +15,7 @@ class Post extends Model
         'tekst',
         'slika',
         'user_id',
+        'statusPosta',
     
     ];
 
