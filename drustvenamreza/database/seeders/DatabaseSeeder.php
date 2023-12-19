@@ -6,6 +6,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 Use Database\Seeders\UserSeeder;
 Use Database\Seeders\UserFollowSeeder;
+Use Database\Seeders\PostSeeder;
+Use Database\Seeders\CommentSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,10 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-       $userSeeder = new UserSeeder;
-       $userSeeder->run(); 
-
-       $userFollowSeeder = new UserFollowSeeder;
-       $userFollowSeeder->run(); 
+        $this->call([
+            UserSeeder::class,
+            UserFollowSeeder::class,
+            PostSeeder::class,
+            CommentSeeder::class,
+        ]);
     }
 }

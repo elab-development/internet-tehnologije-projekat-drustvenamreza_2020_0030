@@ -22,7 +22,7 @@ class PostFactory extends Factory
         $statusiPosta = ['objavljen', 'neobjavljen', 'arhiviran'];
 
         return [
-            'naslov' => $this->faker->sentence(),
+            'naslov' => $this->faker->word(),
             'datum' => $this->faker->date(),
             'tekst' => $this->faker->paragraph(),
             'slika' => $this->faker->imageUrl(),
