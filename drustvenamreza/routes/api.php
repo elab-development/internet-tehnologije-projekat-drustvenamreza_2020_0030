@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\UserFollowController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,6 +30,7 @@ Route::delete('posts/{id}', [PostController::class, 'destroy']);
 
 Route::resource('comments', CommentController::class);
 
-
+Route::get('/userfollows', [UserFollowController::class, 'index']);
+Route::get('/userfollows/{id}', [UserFollowController::class, 'show']);
 
 
