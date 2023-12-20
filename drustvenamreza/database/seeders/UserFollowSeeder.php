@@ -14,6 +14,6 @@ class UserFollowSeeder extends Seeder
      */
     public function run(): void
     {
-        UserFollow::factory()->times(5)->create();
+        UserFollow::factory()->times(3)->create();
     }
 }

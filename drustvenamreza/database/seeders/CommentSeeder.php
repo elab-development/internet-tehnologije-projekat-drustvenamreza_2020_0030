@@ -22,19 +22,17 @@ class CommentSeeder extends Seeder
         $post2 = Post::factory()->create();
 
         //oni imaju smislene veze
-        Comment::factory(3)->create([
+        Comment::factory(1)->create([
             'user_id'=>$user1->id,
             'post_id'=>$post1->id
            ]);
 
-        Comment::factory(2)->create([
+        Comment::factory(1)->create([
             'user_id'=>$user2->id,
             'post_id'=>$post2->id
            ]);
 
-        //random veze
-        Comment::factory()->count(10)->create();
-
+        
 
 
           

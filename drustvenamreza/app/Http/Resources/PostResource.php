@@ -17,15 +17,15 @@ class PostResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'naslov' => $this->naslov,
-            'datum' => $this->datum,
-            'tekst' => $this->tekst,
-            'slika' => $this->slika,
-            'user_id' => $this->user_id,
-            'statusPosta' => $this->statusPosta,
-            'user' => new UserResource($this->whenLoaded('user')), // Prikaz korisnika koji je kreirao post
-            'comments' => CommentResource::collection($this->whenLoaded('comments')), // Prikaz svih komentara vezanih za post
+            'id' => $this->resource->id,
+            'naslov' => $this->resource->naslov,
+            'datum' => $this->resource->datum,
+            'tekst' => $this->resource->tekst,
+            'slika' => $this->resource->slika,
+            'user_id' => $this->resource->user_id,
+            'statusPosta' => $this->resource->statusPosta,
+            'comments' => CommentResource::collection(optional($this->resource->comments))->toArray($request),
+            
         ];
     }
 }

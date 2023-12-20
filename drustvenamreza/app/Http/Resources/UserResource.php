@@ -16,13 +16,11 @@ class UserResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'email' => $this->email,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-            'posts' => PostResource::collection($this->posts), 
-            // Dodajemo prikaz postova korisnika
+            'id' => $this->resource->id,
+            'name' => $this->resource->name,
+            'email' => $this->resource->email,
+            'posts' => PostResource::collection(optional($this->resource->posts))->toArray($request),
+
         ];
     }
 }
