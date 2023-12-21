@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserFollowController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -32,6 +33,9 @@ Route::get('posts/{id}', [PostController::class, 'show']);
 Route::get('/userfollows', [UserFollowController::class, 'index']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
+
+    //pretraga usera po imenu
+    Route::get('/search/users', [SearchController::class, 'searchUsers']);
 
     Route::post('posts', [PostController::class, 'store']);
     Route::put('posts/{id}', [PostController::class, 'update']); 
