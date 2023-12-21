@@ -8,6 +8,8 @@ use App\Http\Resources\CommentResource;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Facades\Auth;
+
 class CommentController extends Controller
 {
     public function index()
@@ -28,18 +30,19 @@ class CommentController extends Controller
      {
      $validator = Validator::make($request->all(), [
          'tekst' => 'required',
-         'user_id' => 'required',
          'post_id' => 'required',
      ]);
  
      if ($validator->fails()) {
          return response()->json($validator->errors());
      }
+
+     $user_id = Auth::user()->id;
  
      $comment = new Comment();
      $comment->tekst = $request->tekst;
      $comment->datum = Carbon::now()->format('Y-m-d H:i:s'); //trenutni datum i vreme
-     $comment->user_id = $request->user_id;
+     $comment->user_id = $user_id;
      $comment->post_id = $request->post_id;
  
      $comment->save();

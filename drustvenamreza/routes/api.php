@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserFollowController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,20 +18,30 @@ use App\Http\Controllers\UserFollowController;
 |
 */
 
+
+//login i registracija
+Route::post('register', [AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login']);
+
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{id}', [UserController::class, 'show']);
 
 Route::get('posts', [PostController::class, 'index']);
 Route::get('posts/{id}', [PostController::class, 'show']); 
-Route::post('posts', [PostController::class, 'store']);
-Route::put('posts/{id}', [PostController::class, 'update']); 
-Route::patch('posts/{id}', [PostController::class, 'updateStatus']);
-Route::delete('posts/{id}', [PostController::class, 'destroy']); 
-
-
-Route::resource('comments', CommentController::class);
 
 Route::get('/userfollows', [UserFollowController::class, 'index']);
-Route::get('/userfollows/{id}', [UserFollowController::class, 'show']);
 
+Route::group(['middleware' => ['auth:sanctum']], function () {
 
+    Route::post('posts', [PostController::class, 'store']);
+    Route::put('posts/{id}', [PostController::class, 'update']); 
+    Route::patch('posts/{id}', [PostController::class, 'updateStatus']);
+    Route::delete('posts/{id}', [PostController::class, 'destroy']); 
+
+    Route::resource('comments', CommentController::class);
+
+    Route::post('/userfollows/zaprati', [UserFollowController::class, 'zaprati']);
+    Route::delete('/userfollows/otprati', [UserFollowController::class, 'otprati']);
+
+    Route::post('logout', [AuthController::class, 'logout']);
+});

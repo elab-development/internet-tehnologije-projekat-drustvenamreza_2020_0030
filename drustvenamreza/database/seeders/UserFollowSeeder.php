@@ -32,7 +32,7 @@ class UserFollowSeeder extends Seeder
            UserFollow::create([
             'follower_id' => 7,
             'followed_id' => 1,
-            'statusPracenja' => 'ne prati',
+            'statusPracenja' => 'prati',
             'datum' => Carbon::now(),
            ]);
            UserFollow::create([

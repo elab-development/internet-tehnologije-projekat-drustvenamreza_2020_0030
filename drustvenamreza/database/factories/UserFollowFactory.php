@@ -23,7 +23,7 @@ class UserFollowFactory extends Factory
         //da ne prati sam sebe user
         $followerId = User::inRandomOrder()->value('id');
         $followedId = User::where('id', '!=', $followerId)->inRandomOrder()->value('id');
-        $statusPracenja = $this->faker->randomElement(['prati', 'ne prati', 'poslat zahtev']);
+        $statusPracenja = $this->faker->randomElement(['prati', 'poslat zahtev']);
         
         return [
             'follower_id' => $followerId,

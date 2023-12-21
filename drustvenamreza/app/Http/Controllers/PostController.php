@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
+use Illuminate\Support\Facades\Auth;
+
 class PostController extends Controller
 {
     public function index()
@@ -36,7 +38,6 @@ class PostController extends Controller
          'tekst' => 'required',
          //dozvoljeni formati za sliku
          'slika' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-         'user_id' => 'required',
          
      ]);
  
@@ -45,13 +46,15 @@ class PostController extends Controller
      }
      //generisanje imena slike
      $slikaIme = Str::random(32).".".$request->slika->getClientOriginalExtension();
- 
+     
+     $user_id = Auth::user()->id;
+
      $post = new Post();
      $post->naslov = $request->naslov;
      $post->datum = Carbon::now()->format('Y-m-d'); //trenutni datum
      $post->tekst = $request->tekst;
      $post->slika = $slikaIme;
-     $post->user_id = $request->user_id;
+     $post->user_id = $user_id;
      $post->statusPosta = 'Aktivan'; //po defaultu se sam stavlja da je aktivan
  
      //cuva se taj novi post
