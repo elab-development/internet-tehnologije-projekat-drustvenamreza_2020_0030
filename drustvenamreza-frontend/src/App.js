@@ -17,6 +17,12 @@ function App() {
     return <Navigate to="/" />;
   };
 
+  const [krterijumPretrage,setKriterijumPretrage]=useState("");
+
+  function pretrazi(kriterijum){
+    setKriterijumPretrage(kriterijum);
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
