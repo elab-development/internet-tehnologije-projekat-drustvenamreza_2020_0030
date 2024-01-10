@@ -3,6 +3,8 @@ import { BrowserRouter,Route,Routes, Navigate  } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
 import React, { useState } from 'react';
 import './App.css';
+import NavBar from './components/NavBar';
+
 
 function App() {
 
