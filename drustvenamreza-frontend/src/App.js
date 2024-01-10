@@ -4,6 +4,7 @@ import LoginForm from './components/LoginForm';
 import React, { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
+import Feed from './components/Feed';
 
 
 function App() {
@@ -34,6 +35,11 @@ function App() {
             path="/"
             element={loggedInUser ? <Navigate to="/feed" /> : <LoginForm onLogin={handleLogin} />}
           />
+          <Route 
+            path="/feed" 
+            element={<Feed  kriterijum={krterijumPretrage} loggedInUser={loggedInUser} />} 
+          />
+
 
           
         </Routes>
