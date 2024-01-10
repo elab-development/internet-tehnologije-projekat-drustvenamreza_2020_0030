@@ -1,0 +1,60 @@
+
+.login-form {
+    max-width: 100%;
+    padding: 180px;
+    background-image: url('https://afa1976.org/wp-content/uploads/2023/10/SHARE_-Social-Media-TL_mw.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+.login-form-data {
+    background-color: seashell;
+    text-align: center;
+    max-width: 70%;
+    padding: 20px;
+    margin: 90px auto;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 96%;
+}
+
+.login-form h2 {
+    margin-bottom: 15px;
+    color: #604d9e; /* Ljubičasta boja */
+}
+
+.login-form label {
+    width: 50%;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #604d9e; /* Ljubičasta boja */
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 50%;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #aaa2d8; /* Ljubičasta boja */
+    border-radius: 3px;
+}
+
+.login-form button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #a27eb8; /* Ljubičasta boja */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #aaa2d8; /* Ljubičasta boja */
+}

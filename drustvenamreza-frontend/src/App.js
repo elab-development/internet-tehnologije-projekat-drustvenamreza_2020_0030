@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+
+import { BrowserRouter,Route,Routes, Navigate  } from 'react-router-dom';
+import LoginForm from './components/LoginForm';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  const handleLogin = (username) => {
+    setLoggedInUser(username);
+  };
+
+  const handleLogout = () => {
+    setLoggedInUser(null);
+    return <Navigate to="/" />;
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        {loggedInUser && <NavBar  pretrazi={pretrazi} loggedInUser={loggedInUser} handleLogout={handleLogout} />}
+        <Routes>
+          <Route
+            path="/"
+            element={loggedInUser ? <Navigate to="/feed" /> : <LoginForm onLogin={handleLogin} />}
+          />
+
+          
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
