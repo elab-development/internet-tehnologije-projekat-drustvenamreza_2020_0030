@@ -6,6 +6,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Feed from './components/Feed';
 import Profile from './components/Profile';
+import Followers from './components/Followers';
 
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
           <Route
             path="/profile"
             element={loggedInUser ? <Profile loggedInUser={loggedInUser} /> : <Navigate to="/" />}
+          />
+           <Route
+            path="/followers"
+            element={loggedInUser ? <Followers  kriterijum={krterijumPretrage} loggedInUser={loggedInUser} /> : <Navigate to="/" />}
           />
 
 

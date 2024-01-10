@@ -60,4 +60,14 @@
     gap: 40px; /* Rastojanje između elemenata */
   }
 
+  #myFollowers , #suggestedUsers {
+    height: 500px;
+    margin-left: 50px;
+    margin-right:50px ;
+    display: block;
+    justify-content: space-around; 
+  }
 
+  #suggestedUsers {
+    margin-bottom: 30px;
+  }
