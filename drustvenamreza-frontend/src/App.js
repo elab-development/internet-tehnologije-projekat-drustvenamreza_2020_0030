@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import Feed from './components/Feed';
+import Profile from './components/Profile';
 
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
           <Route 
             path="/feed" 
             element={<Feed  kriterijum={krterijumPretrage} loggedInUser={loggedInUser} />} 
+          />
+          <Route
+            path="/profile"
+            element={loggedInUser ? <Profile loggedInUser={loggedInUser} /> : <Navigate to="/" />}
           />
 
 
