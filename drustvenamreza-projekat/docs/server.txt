@@ -1,0 +1,24 @@
+npm i -g nodemon
+-- for running server
+
+npm init -y
+-- creating package.json & node_modules folder
+
+-- Dependencies
+express
+body-parser
+bcrypt
+cors
+dotenv
+gridfs-stream
+multer
+multer-gridfs-storage
+helmet
+morgan
+jsonwebtoken
+mongoose
+
+--legacy-peer-deps
+
+-- starting server
+nodemon index.js
