@@ -10,3 +10,6 @@ Sign in – stranica za logovanje koja sadrži unos mejla i lozinke, kao i dugme
 Feed – naslovna stranica koja služi korisniku za pregledanje najnovijih postova drugih korisnika, za dodavanje sopstvenih postova, za lajkovanje i komentarisanje tuđih postova, ali i za brzo preusmeravanje na profile korisnika koji su kreirali postove.
 Profil – možemo videti sopstveni profil, ali i profil drugih korisnika gde nam se prikazuju informacije o lokaciji, zanimanju, postovi korisnika kao i friend list.
 Admin dashboard – samo admin mu može pristupiti, i on ima opciju da vidi sve korisnike, sve postove, ali i da obriše postove.
+
+
+Serverski deo aplikacije pokrece se komandom nodemon index.js, dok se klijentski deo pokrece komandom npm start.
