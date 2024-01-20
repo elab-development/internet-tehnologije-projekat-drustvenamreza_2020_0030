@@ -1,0 +1,73 @@
+.followers-heading, .suggested-users-heading {
+    color: #604d9e;
+    font-size: 24px;
+  }
+
+  .follower-item,   .suggested-user-item  {
+        width: 200px;
+        background-color: #aaa2d8;
+        border-radius: 8px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px; /* Dodajte marginu između elemenata */
+      
+  }
+  
+  .follower-username,   .suggested-username {
+    color: #604d9e;
+  }
+  
+  .unfollow-button {
+    background-color: #604d9e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .unfollow-button:hover {
+    background-color: #a27eb8;
+  }
+  
+  .follow-button {
+    background-color: #604d9e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .follow-button:hover {
+    background-color: #a27eb8;
+  }
+
+  .follower-item img , .suggested-user-item img {
+    width: 100px; /* Podesite veličinu slika prema potrebama */
+    height: 100px; /* Podesite visinu slika prema potrebama */
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .followers-list, .suggested-users-list {
+    display: flex;
+    flex-wrap: wrap; /* Omogućava da se elementi prelome na novi red ako je potrebno */
+    gap: 40px; /* Rastojanje između elemenata */
+  }
+
+  #myFollowers , #suggestedUsers {
+    height: 500px;
+    margin-left: 50px;
+    margin-right:50px ;
+    display: block;
+    justify-content: space-around; 
+  }
+
+  #suggestedUsers {
+    margin-bottom: 30px;
+  }

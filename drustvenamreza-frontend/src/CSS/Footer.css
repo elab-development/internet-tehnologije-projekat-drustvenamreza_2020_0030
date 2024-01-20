@@ -1,0 +1,28 @@
+.footer-container {
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: linear-gradient(to right, #604d9e, #a27eb8, #aaa2d8);
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    height: 60px;
+    margin: 0;
+  }
+  
+
+  
+  .footer-container button {
+    background-color: #604d9e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer-container button:hover {
+    background-color: #a27eb8;
+  }
